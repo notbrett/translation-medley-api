@@ -1,9 +1,12 @@
 require('dotenv').config();
 const express = require('express');
-const path = require('path');
 const apiRoute = require('./api/app');
 
 const server = express();
+
+server.get('/', (req, res) => {
+  res.json({ message: 'Medley API running' });
+});
 
 server.use('/api', apiRoute);
 
